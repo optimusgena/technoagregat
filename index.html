@@ -842,6 +842,120 @@
                 gap: 12px;
             }
         }
+        /* === НОВЫЙ ГЛАВНЫЙ ЭКРАН === */
+.hero-content-new {
+    text-align: center;
+    padding: 60px 20px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 3vw, 1.15rem);
+    color: #b0b0b0;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+    color: #fff;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(46,125,50,0.4);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    border-color: #4caf50;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(76,175,80,0.15);
+}
+
+.hero-features {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #c0c0c0;
+    font-size: 0.95rem;
+}
+
+.hero-feature-item i {
+    color: #4caf50;
+}
+
+@media (max-width: 768px) {
+    .hero-content-new {
+        padding: 30px 15px 20px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+        text-align: center;
+    }
+}
     </style>
 </head>
 <body>
@@ -865,43 +979,21 @@
     </div>
 
     <!-- Главный экран -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <p>Профессиональный подбор контрактных двигателей премиум-класса. Каждый мотор проходит полную диагностику с видеоотчетом и пакетом документов.</p>
-                <div class="tech-badge">
-                    <div class="tech-badge-item"><i class="fas fa-video"></i><span>Видеоотчет</span></div>
-                    <div class="tech-badge-item"><i class="fas fa-file-pdf"></i><span>Документы ГИБДД</span></div>
-                    <div class="tech-badge-item"><i class="fas fa-shield-alt"></i><span>Гарантия</span></div>
-                </div>
-            </div>
-            <div class="hero-form">
-                <h3>Оставить заявку на подбор</h3>
-                <form id="telegramForm">
-                    <div class="form-group" id="name-group">
-                        <input type="text" id="name" placeholder="Ваше имя" required>
-                    </div>
-                    <div class="form-group" id="phone-group">
-                        <input type="tel" id="phone" placeholder="Номер телефона" required>
-                    </div>
-                    <div class="form-group" id="brand-group">
-                        <select id="brand" required>
-                            <option value="" disabled selected>Выберите марку авто</option>
-                        </select>
-                    </div>
-                    <div class="form-group" id="model-group">
-                        <select id="model" required>
-                            <option value="" disabled selected>Сначала выберите марку</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn">Отправить заявку</button>
-                    <div class="privacy-link">
-                        <a href="#" id="privacyLink">Политика конфиденциальности</a>
-                    </div>
-                </form>
-            </div>
+<section class="hero">
+    <div class="hero-content-new">
+        <h1 class="hero-title">Профессиональный подбор контрактных двигателей «под ключ»</h1>
+        <p class="hero-subtitle">Подберём агрегат под ваш автомобиль: полная проверка, видеоотчёт, документы. Никаких скрытых условий — только понятные сроки и честная цена по запросу.</p>
+        <div class="hero-buttons">
+            <a href="#order-form" class="btn-primary">Заявка на подбор →</a>
+            <a href="tel:+79303453011" class="btn-secondary"><i class="fas fa-phone-alt"></i> Позвонить сейчас</a>
         </div>
-    </section>
+        <div class="hero-features">
+            <div class="hero-feature-item"><i class="fas fa-check-circle"></i> Видеоотчёт</div>
+            <div class="hero-feature-item"><i class="fas fa-check-circle"></i> Документы ГИБДД</div>
+            <div class="hero-feature-item"><i class="fas fa-check-circle"></i> Гарантия</div>
+        </div>
+    </div>
+</section>
 
     <!-- 4 карточки преимуществ -->
     <section class="why-choose-us">
