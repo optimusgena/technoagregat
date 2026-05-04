@@ -1075,6 +1075,42 @@
     margin-top: 20px;
     margin-bottom: 35px;
 }
+        /* === БЛОК "О НАС" === */
+.about-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #c0c0c0;
+    margin-bottom: 15px;
+}
+
+.about-text {
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #b0b0b0;
+}
+
+/* Градиенты для названия компании внутри текста */
+.about-techno {
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-agregat {
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
     </style>
 </head>
 <body>
@@ -1098,8 +1134,14 @@
             <a href="#order-form" class="btn-primary">Заявка на подбор</a>
             <a href="tel:+79303453011" class="btn-secondary"><i class="fas fa-phone-alt"></i> Позвонить сейчас</a>
         </div>
-<div class="work-hours">
-    Ежедневно 08:00-20:00. Перезваниваем за 5-15 минут.
+<div class="work-hours">Ежедневно 08:00–20:00. Перезваниваем за 5–15 минут.</div>
+
+<!-- Блок О НАС -->
+<div class="about-section">
+    <h3 class="about-title">О НАС</h3>
+    <p class="about-text">
+        <span class="about-techno">ТЕХНО</span><span class="about-agregat">АГРЕГАТ</span> — это профессиональный поставщик контрактных двигателей премиум-класса. Мы специализируемся на подборе оригинальных моторов с минимальным пробегом и подтверждённой историей.
+    </p>
 </div>
         <!-- Форма заявки -->
         <div class="hero-form" id="order-form">
