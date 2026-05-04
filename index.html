@@ -983,10 +983,37 @@
             <a href="#order-form" class="btn-primary">Заявка на подбор →</a>
             <a href="tel:+79303453011" class="btn-secondary"><i class="fas fa-phone-alt"></i> Позвонить сейчас</a>
         </div>
-        <div class="hero-features">
+                <div class="hero-features">
             <div class="hero-feature-item"><i class="fas fa-check-circle"></i> Видеоотчёт</div>
             <div class="hero-feature-item"><i class="fas fa-check-circle"></i> Документы ГИБДД</div>
             <div class="hero-feature-item"><i class="fas fa-check-circle"></i> Гарантия</div>
+        </div>
+
+        <!-- Форма заявки -->
+        <div class="hero-form" id="order-form">
+            <h3>Оставить заявку на подбор</h3>
+            <form id="telegramForm">
+                <div class="form-group" id="name-group">
+                    <input type="text" id="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group" id="phone-group">
+                    <input type="tel" id="phone" placeholder="Номер телефона" required>
+                </div>
+                <div class="form-group" id="brand-group">
+                    <select id="brand" required>
+                        <option value="" disabled selected>Выберите марку авто</option>
+                    </select>
+                </div>
+                <div class="form-group" id="model-group">
+                    <select id="model" required>
+                        <option value="" disabled selected>Сначала выберите марку</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Отправить заявку</button>
+                <div class="privacy-link">
+                    <a href="#" id="privacyLink">Политика конфиденциальности</a>
+                </div>
+            </form>
         </div>
     </div>
 </section>
