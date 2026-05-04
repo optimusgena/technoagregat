@@ -1663,24 +1663,21 @@ html {
     });
     // Плавная прокрутка к форме + анимация вибрации
 document.querySelector('.btn-primary[href="#order-form"]').addEventListener('click', function(e) {
-    e.preventDefault();
-
-    // Вызываем вибрацию сразу (без задержки), пока жест "свежий"
-    if (window.navigator && window.navigator.vibrate) {
-        window.navigator.vibrate(200);
-    }
-
+    e.preventDefault(); // отменяем мгновенный переход
     const target = document.querySelector('#order-form');
     if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // После прокрутки добавляем класс с вибрацией
         setTimeout(() => {
             target.classList.add('highlight-shake');
+            // Убираем класс через 0.6с, чтобы можно было повторить
             setTimeout(() => {
                 target.classList.remove('highlight-shake');
             }, 600);
-        }, 500);
+        }, 500); // небольшая задержка, чтобы прокрутка завершилась
     }
 });
+
 </script>
 </body>
 </html>
