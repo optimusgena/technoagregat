@@ -1040,6 +1040,32 @@
 .hero-features {
     justify-content: flex-start;
 }   
+    /* === ПЛАШКА С ДОСТАВКОЙ И ВРЕМЕНЕМ === */
+.info-badge {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.info-badge-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(18,22,30,0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(76,175,80,0.2);
+    border-radius: 40px;
+    padding: 10px 20px;
+    color: #c0c0c0;
+    font-size: 0.9rem;
+}
+
+.info-badge-item i {
+    color: #4caf50;
+    font-size: 1rem;
+}    
     </style>
 </head>
 <body>
@@ -1062,6 +1088,14 @@
         <div class="hero-buttons">
             <a href="#order-form" class="btn-primary">Заявка на подбор</a>
             <a href="tel:+79303453011" class="btn-secondary"><i class="fas fa-phone-alt"></i> Позвонить сейчас</a>
+        </div>
+        <div class="info-badge">
+    <div class="info-badge-item">
+        <i class="fas fa-truck"></i> Доставка по всей РФ
+    </div>
+    <div class="info-badge-item">
+        <i class="fas fa-clock"></i> Ежедневно 08:00–20:00. Перезваниваем за 5–15 минут.
+    </div>
         </div>
 
         <!-- Форма заявки -->
