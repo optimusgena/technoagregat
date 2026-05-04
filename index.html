@@ -1095,6 +1095,47 @@
     50% { transform: rotate(0deg); }
     100% { transform: rotate(0deg); }
 }
+        /* === КНОПКА НАВЕРХ === */
+html {
+    scroll-behavior: smooth;
+}
+
+.scroll-to-top {
+    position: absolute;
+    bottom: 90px;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: rgba(18,24,32,0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid rgba(76,175,80,0.4);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 10;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top i {
+    font-size: 24px;
+    color: #4caf50;
+}
+
+.scroll-to-top:hover {
+    border-color: #4caf50;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(76,175,80,0.3);
+}
     </style>
 </head>
 <body>
@@ -1310,6 +1351,9 @@
 
 <!-- ПЛАВАЮЩАЯ КНОПКА -->
 <div class="floating-social">
+    <a href="#" class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
     <div class="social-toggle" id="socialToggle">
         <i class="fas fa-comments"></i>
     </div>
@@ -1601,6 +1645,19 @@
         } catch (err) { alert('Ошибка отправки'); }
         finally { submitReview.disabled = false; submitReview.textContent = 'Отправить отзыв'; }
     });
+    // Кнопка "Наверх" — показать/скрыть
+const scrollToTopBtn = document.getElementById('scrollToTop');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+        scrollToTopBtn.classList.add('visible');
+    } else {
+        scrollToTopBtn.classList.remove('visible');
+    }
+});
+scrollToTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 </script>
 </body>
 </html>
