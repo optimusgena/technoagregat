@@ -1670,6 +1670,10 @@ document.querySelector('.btn-primary[href="#order-form"]').addEventListener('cli
         // После прокрутки добавляем класс с вибрацией
         setTimeout(() => {
             target.classList.add('highlight-shake');
+            // Запускаем вибрацию на телефоне
+            if (window.navigator && window.navigator.vibrate) {
+                window.navigator.vibrate(200); // вибрация 200 мс
+            }
             // Убираем класс через 0.6с, чтобы можно было повторить
             setTimeout(() => {
                 target.classList.remove('highlight-shake');
