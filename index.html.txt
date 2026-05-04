@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Техно Агрегат | Контрактные двигатели</title>
+    
+    <!-- Favicon (из файлов в папке favicon_package) -->
+    <link rel="icon" type="image/x-icon" href="favicon_package/favicon_clean.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_package/favicon_clean_16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_package/favicon_clean_32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon_package/favicon_clean_48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon_package/favicon_clean_64.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_package/favicon_clean_180.png">
+    <link rel="shortcut icon" href="favicon_package/favicon_clean.ico" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+        ym(108285792,'init',{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/108285792" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    
+    <style>
+        /* ... весь ваш стиль (без изменений) ... */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #06080a;
+            color: #e0e0e0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Анимированный фон */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(46,125,50,0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(76,175,80,0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 40% 80%, rgba(33,150,243,0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 20%, rgba(156,39,176,0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><circle cx="20" cy="20" r="2" fill="%234caf50"/><circle cx="80" cy="30" r="3" fill="%234caf50"/><circle cx="40" cy="70" r="2" fill="%234caf50"/><circle cx="60" cy="40" r="4" fill="%234caf50"/><circle cx="10" cy="80" r="2" fill="%234caf50"/></svg>');
+            background-size: 200px 200px;
+            pointer-events: none;
+            z-index: -1;
+            animation: floatParticles 60s linear infinite;
+        }
+
+        @keyframes floatParticles {
+            from { transform: translateY(0) translateX(0); }
+            to { transform: translateY(-100px) translateX(100px); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 5%;
+            width: 100%;
+        }
+
+        /* Логотип и контакты в одной строке */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 10px 0;
+            flex-wrap: wrap;
+        }
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .animated-logo {
+            position: relative;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .animated-logo:hover { transform: scale(1.05); }
+        .rotating-gear {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            border: 4px solid #4caf50;
+            border-radius: 50%;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+            animation: rotate 8s linear infinite;
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+        }
+        .rotating-gear::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border: 4px solid #2e7d32;
+            border-radius: 50%;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            animation: rotateReverse 6s linear infinite;
+        }
+        .rotating-gear::after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+            background: radial-gradient(circle, rgba(76, 175, 80, 0.4), transparent);
+            border-radius: 50%;
+            filter: blur(5px);
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+        .logo-icon {
+            position: relative;
+            z-index: 2;
+            font-size: 2.8rem;
+            color: #4caf50;
+            filter: drop-shadow(0 0 15px rgba(76, 175, 80, 0.6));
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .logo-text h1 {
+            font-size: clamp(1.8rem, 6vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .logo-text .techno {
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+        }
+        .logo-text .agregat {
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .logo-text .premium {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            color: #c0c0c0;
+        }
+
+        /* Блок контактов вверху */
+        .top-contacts {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(18,22,30,0.7);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 60px;
+            border: 1px solid rgba(76,175,80,0.2);
+            transition: all 0.3s;
+        }
+        .top-contacts:hover {
+            border-color: #4caf50;
+        }
+        .phone-number {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        .phone-number:hover {
+            color: #4caf50;
+        }
+        .call-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            border: none;
+            padding: 8px 18px;
+            border-radius: 40px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .call-btn i {
+            font-size: 1rem;
+        }
+        .call-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46,125,50,0.4);
+        }
+
+        /* Главный экран */
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .hero-text p {
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .tech-badge {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .tech-badge-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 18px;
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(76,175,80,0.2);
+            border-radius: 60px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .tech-badge-item:hover {
+            border-color: #4caf50;
+            transform: translateY(-3px);
+        }
+
+        /* Форма */
+        .hero-form {
+            background: rgba(18,22,30,0.7);
+            backdrop-filter: blur(20px);
+            padding: 30px;
+            border-radius: 32px;
+            border: 1px solid rgba(76,175,80,0.2);
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .hero-form h3 {
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(10,14,20,0.6);
+            border: 2px solid rgba(76,175,80,0.1);
+            border-radius: 18px;
+            font-size: 1rem;
+            color: #fff;
+            transition: all 0.3s;
+        }
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            border: none;
+            border-radius: 18px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(46,125,50,0.3);
+        }
+        .privacy-link {
+            margin-top: 15px;
+            text-align: center;
+        }
+        .privacy-link a {
+            color: #8a94a0;
+            font-size: 0.8rem;
+            text-decoration: none;
+            border-bottom: 1px dashed #3f4855;
+        }
+
+        /* 4 карточки преимуществ */
+        .why-choose-us {
+            margin-top: 80px;
+            text-align: center;
+        }
+        .why-choose-us h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 30px;
+        }
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+            align-items: stretch;
+        }
+        .advantage-card {
+            background: rgba(18,24,32,0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(76,175,80,0.15);
+            border-radius: 32px;
+            padding: 30px 20px;
+            transition: all 0.4s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .advantage-card:hover {
+            transform: translateY(-10px);
+            border-color: #4caf50;
+        }
+        .advantage-icon {
+            font-size: 3rem;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+        .advantage-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        .advantage-card p {
+            color: #b0b0b0;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .advantage-features {
+            list-style: none;
+            text-align: left;
+            width: 100%;
+            margin-top: auto;
+        }
+        .advantage-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .advantage-features li i {
+            color: #4caf50;
+        }
+
+        .single-docs {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .single-docs .service-icon {
+            font-size: 3rem;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+        .single-docs h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        .single-docs p {
+            color: #b0b0b0;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .single-docs ul {
+            list-style: none;
+            text-align: left;
+            margin-top: auto;
+        }
+        .single-docs ul li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .single-docs ul li i {
+            color: #4caf50;
+        }
+
+        /* Отзывы */
+        .testimonials {
+            margin-top: 80px;
+            text-align: center;
+        }
+        .testimonials h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 40px;
+        }
+        .testimonials-carousel {
+            max-width: 100%;
+            overflow-x: auto;
+            padding: 20px 0 30px;
+            scrollbar-width: thin;
+        }
+        .carousel-track {
+            display: flex;
+            gap: 25px;
+            padding: 0 10px;
+            width: max-content;
+        }
+        .testimonial-card {
+            background: rgba(18,24,32,0.7);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            padding: 25px;
+            width: 280px;
+            flex-shrink: 0;
+            text-align: left;
+        }
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .testimonial-avatar {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        .testimonial-name h4 {
+            font-size: 1.1rem;
+        }
+        .testimonial-rating {
+            color: #ffb400;
+            margin-bottom: 12px;
+        }
+        .testimonial-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .testimonial-card img {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 10px;
+            border: 1px solid #4caf50;
+        }
+        .btn-review {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            border-radius: 60px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            color: white;
+        }
+
+        /* Блок соцсетей */
+        .social-section {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .social-title {
+            font-size: 1rem;
+            color: #b0b0b0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .social-icon-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 0 20px;
+            height: 48px;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+            font-weight: 500;
+        }
+        .social-icon-link.max {
+            background: linear-gradient(135deg, #f5af19, #f12711);
+            border: 1px solid rgba(255,200,100,0.5);
+            color: #fff;
+        }
+        .social-icon-link.max i {
+            font-size: 20px;
+            color: #fff;
+        }
+        .social-icon-link.max span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #fff;
+        }
+        .social-icon-link.max:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(241,39,17,0.4);
+        }
+        .social-icon-link.telegram {
+            background: #26A5E4;
+            border: 1px solid rgba(38,165,228,0.5);
+            color: #fff;
+        }
+        .social-icon-link.telegram i {
+            font-size: 20px;
+            color: #fff;
+        }
+        .social-icon-link.telegram span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #fff;
+        }
+        .social-icon-link.telegram:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(38,165,228,0.4);
+        }
+
+        /* Модальное окно для отзыва */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+        .modal-content {
+            background: rgba(18,22,30,0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 40px;
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        /* Плавающая кнопка */
+        .floating-social {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        .social-toggle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4), 0 0 15px rgba(76,175,80,0.5);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(76,175,80,0.6);
+            animation: pulseGlowBig 2s infinite;
+        }
+        @keyframes pulseGlowBig {
+            0% { box-shadow: 0 6px 20px rgba(0,0,0,0.4), 0 0 0 0 rgba(76,175,80,0.7); }
+            70% { box-shadow: 0 6px 20px rgba(0,0,0,0.4), 0 0 0 12px rgba(76,175,80,0); }
+            100% { box-shadow: 0 6px 20px rgba(0,0,0,0.4), 0 0 0 0 rgba(76,175,80,0); }
+        }
+        .social-toggle i {
+            font-size: 36px;
+            color: white;
+            transition: transform 0.3s;
+        }
+        .social-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(46,125,50,0.6);
+        }
+        .social-links {
+            position: absolute;
+            bottom: 90px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .social-links.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: rgba(18,24,32,0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 1px solid rgba(76,175,80,0.4);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            gap: 4px;
+        }
+        .social-link i {
+            font-size: 28px;
+        }
+        .social-link span {
+            font-size: 10px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+        .social-link.max {
+            background: linear-gradient(135deg, #f5af19, #f12711);
+            border: none;
+        }
+        .social-link.max i {
+            color: #fff;
+        }
+        .social-link.max:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(241,39,17,0.5);
+        }
+        .social-link.telegram {
+            background: #26A5E4;
+            border: none;
+        }
+        .social-link.telegram i {
+            color: #fff;
+        }
+        .social-link.telegram:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(38,165,228,0.5);
+        }
+        /* Стиль для звонка в плавающем меню */
+        .social-link.phone {
+            background: #2e7d32;
+            border: none;
+        }
+        .social-link.phone i {
+            color: #fff;
+        }
+        .social-link.phone:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(46,125,50,0.5);
+        }
+
+        /* Адаптация */
+        @media (max-width: 1100px) {
+            .advantages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .hero-text {
+                text-align: center;
+                align-items: center;
+            }
+            .tech-badge {
+                justify-content: center;
+            }
+            .logo-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .logo-wrapper {
+                justify-content: center;
+            }
+            .top-contacts {
+                margin-top: 10px;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px 4%;
+            }
+            .hero-form {
+                padding: 25px;
+            }
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+            .floating-social {
+                bottom: 20px;
+                right: 20px;
+            }
+            .social-toggle {
+                width: 65px;
+                height: 65px;
+            }
+            .social-toggle i {
+                font-size: 28px;
+            }
+            .social-link {
+                width: 50px;
+                height: 50px;
+            }
+            .social-link i {
+                font-size: 24px;
+            }
+            .social-link span {
+                font-size: 8px;
+            }
+            .social-icon-link {
+                height: 42px;
+                padding: 0 16px;
+            }
+            .social-icon-link i {
+                font-size: 18px;
+            }
+            .social-icon-link span {
+                font-size: 0.8rem;
+            }
+            .top-contacts {
+                padding: 6px 16px;
+                gap: 10px;
+            }
+            .phone-number {
+                font-size: 1rem;
+            }
+            .call-btn {
+                padding: 6px 14px;
+                font-size: 0.8rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .tech-badge-item {
+                padding: 6px 14px;
+                font-size: 0.85rem;
+            }
+            .social-toggle {
+                width: 55px;
+                height: 55px;
+            }
+            .social-toggle i {
+                font-size: 24px;
+            }
+            .social-link {
+                width: 45px;
+                height: 45px;
+            }
+            .social-link i {
+                font-size: 20px;
+            }
+            .social-link span {
+                font-size: 7px;
+            }
+            .top-contacts {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+        }
+        /* === НОВЫЙ ГЛАВНЫЙ ЭКРАН === */
+.hero-content-new {
+    text-align: center;
+    padding: 60px 20px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 3vw, 1.15rem);
+    color: #b0b0b0;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #2e7d32, #1b5e20);
+    color: #fff;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(46,125,50,0.4);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    border-color: #4caf50;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(76,175,80,0.15);
+}
+
+.hero-features {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #c0c0c0;
+    font-size: 0.95rem;
+}
+
+.hero-feature-item i {
+    color: #4caf50;
+}
+
+@media (max-width: 768px) {
+    .hero-content-new {
+        padding: 30px 15px 20px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+        text-align: center;
+    }
+}
+/* === КНОПКА СО СВЕТЛОЙ ОБВОДКОЙ И БЛИКОМ === */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(129, 199, 132, 0.6) !important;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.15),
+        rgba(255, 255, 255, 0.25),
+        rgba(255, 255, 255, 0.15),
+        transparent
+    );
+    transform: skewX(-25deg);
+    animation: btnShine 5s infinite;
+}
+
+@keyframes btnShine {
+    0% { left: -100%; }
+    40% { left: 150%; }
+    100% { left: 150%; }
+}    
+/* === ЛЁГКОЕ СВЕЧЕНИЕ КНОПКИ === */
+.btn-primary {
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.3), 0 0 30px rgba(76, 175, 80, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.5), 0 0 40px rgba(76, 175, 80, 0.2);
+}    
+    .logo-text h1 {
+    word-spacing: normal;
+    letter-spacing: 0;
+}
+
+.logo-text .techno {
+    padding-right: 0;
+    margin-right: -2px;
+}
+
+.logo-text .agregat {
+    padding-left: 0;
+}
+   .highlight {
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+   }
+    .white-text {
+    color: #ffffff;
+    }    
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Логотип и контакты -->
+    <div class="logo-container">
+        <div class="logo-wrapper">
+        <div class="logo-text">
+    <h1><span class="techno">ТЕХНО</span><span class="agregat">АГРЕГАТ</span></h1>
+    <div class="premium">PREMIUM ENGINES</div>
+</div>
+        </div>
+    </div>
+
+    <!-- Главный экран -->
+<section class="hero">
+    <div class="hero-content-new">
+        <h1 class="hero-title">Профессиональный подбор контрактных двигателей <span class="highlight">«под ключ»</span></h1>
+        <p class="hero-subtitle">Подберём агрегат под ваш автомобиль: полная проверка, видеоотчёт, документы. Никаких скрытых условий — <span class="white-text">только понятные сроки и честная цена по запросу.</span></p>
+        <div class="hero-buttons">
+            <a href="#order-form" class="btn-primary">Заявка на подбор</a>
+            <a href="tel:+79303453011" class="btn-secondary"><i class="fas fa-phone-alt"></i> Позвонить сейчас</a>
+        </div>
+                <div class="hero-features">
+            <div class="hero-feature-item"><i class="fas fa-check-circle"></i> Видеоотчёт</div>
+            <div class="hero-feature-item"><i class="fas fa-check-circle"></i> Документы ГИБДД</div>
+            <div class="hero-feature-item"><i class="fas fa-check-circle"></i> Гарантия</div>
+        </div>
+
+        <!-- Форма заявки -->
+        <div class="hero-form" id="order-form">
+            <h3>Оставить заявку на подбор</h3>
+            <form id="telegramForm">
+                <div class="form-group" id="name-group">
+                    <input type="text" id="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group" id="phone-group">
+                    <input type="tel" id="phone" placeholder="Номер телефона" required>
+                </div>
+                <div class="form-group" id="brand-group">
+                    <select id="brand" required>
+                        <option value="" disabled selected>Выберите марку авто</option>
+                    </select>
+                </div>
+                <div class="form-group" id="model-group">
+                    <select id="model" required>
+                        <option value="" disabled selected>Сначала выберите марку</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Отправить заявку</button>
+                <div class="privacy-link">
+                    <a href="#" id="privacyLink">Политика конфиденциальности</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <!-- 4 карточки преимуществ -->
+    <section class="why-choose-us">
+        <h2>Почему выбирают нас</h2>
+        <div class="advantages-grid">
+            <div class="advantage-card">
+                <i class="fas fa-gem advantage-icon"></i>
+                <h3>Премиальное качество</h3>
+                <p>Оригинальные двигатели с минимальным пробегом и полной историей</p>
+                <ul class="advantage-features">
+                    <li><i class="fas fa-check-circle"></i> Низкий пробег от 50 000 км</li>
+                    <li><i class="fas fa-check-circle"></i> Полная история обслуживания</li>
+                    <li><i class="fas fa-check-circle"></i> Оригинальные запчасти</li>
+                </ul>
+            </div>
+            <div class="advantage-card">
+                <i class="fas fa-shield-alt advantage-icon"></i>
+                <h3>Гарантия надёжности</h3>
+                <p>Каждый двигатель соответствует международным стандартам</p>
+                <ul class="advantage-features">
+                    <li><i class="fas fa-check-circle"></i> Сервисная книжка</li>
+                    <li><i class="fas fa-check-circle"></i> Соответствие стандартам</li>
+                    <li><i class="fas fa-check-circle"></i> Премиум обслуживание</li>
+                </ul>
+            </div>
+            <div class="advantage-card">
+                <i class="fas fa-clipboard-check advantage-icon"></i>
+                <h3>Полная проверка</h3>
+                <p>Каждый двигатель проходит многоступенчатую диагностику</p>
+                <ul class="advantage-features">
+                    <li><i class="fas fa-check-circle"></i> Замер компрессии</li>
+                    <li><i class="fas fa-check-circle"></i> Проверка на герметичность</li>
+                    <li><i class="fas fa-check-circle"></i> Видеоотчет для клиента</li>
+                </ul>
+            </div>
+            <div class="advantage-card">
+                <div class="single-docs">
+                    <div class="service-icon"><i class="fas fa-file-pdf"></i></div>
+                    <h3>Документы для ГИБДД</h3>
+                    <p>Полный пакет для легальной установки</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Свидетельство о растаможке</li>
+                        <li><i class="fas fa-check-circle"></i> Сертификат соответствия</li>
+                        <li><i class="fas fa-check-circle"></i> Акт технической экспертизы</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ОТЗЫВЫ (карусель) -->
+    <section class="testimonials">
+        <h2>Отзывы наших клиентов</h2>
+        <div class="testimonials-carousel">
+            <div class="carousel-track">
+                <!-- Отзыв 1: Audi Q5 с фото -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                        <div class="testimonial-name"><h4>Дмитрий С.</h4><span>Audi Q5</span></div>
+                    </div>
+                    <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="testimonial-text">Заказывал двигатель для Audi. Прислали видеообзор, всё честно. Мотор работает отлично, пробег родной. Спасибо!</div>
+                    <img src="engine_audi_q5.webp" alt="Фото двигателя Audi Q5">
+                    <div class="testimonial-date" style="color:#4caf50; font-size:0.75rem; text-align:right; margin-top:10px;">12.03.2025</div>
+                </div>
+                <!-- Отзыв 2: BMW X3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                        <div class="testimonial-name"><h4>Екатерина В.</h4><span>BMW X3</span></div>
+                    </div>
+                    <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    <div class="testimonial-text">Очень довольна сервисом. Предоставили полный пакет документов для ГИБДД, двигатель в идеальном состоянии.</div>
+                    <div class="testimonial-date" style="color:#4caf50; font-size:0.75rem; text-align:right; margin-top:10px;">05.03.2025</div>
+                </div>
+                <!-- Отзыв 3: Mercedes E200 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                        <div class="testimonial-name"><h4>Алексей М.</h4><span>Mercedes E200</span></div>
+                    </div>
+                    <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="testimonial-text">Подобрали мотор за один день, доставили быстро. Компрессия в норме, масло не ест. Буду рекомендовать.</div>
+                    <div class="testimonial-date" style="color:#4caf50; font-size:0.75rem; text-align:right; margin-top:10px;">28.02.2025</div>
+                </div>
+                <!-- Отзыв 4: Toyota Camry с фото -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                        <div class="testimonial-name"><h4>Ольга К.</h4><span>Toyota Camry</span></div>
+                    </div>
+                    <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="testimonial-text">Отличный подбор, всё как обещали. Видеоотчет прислали ещё до отправки, очень прозрачно.</div>
+                    <img src="Tc.webp" alt="Фото двигателя Toyota Camry">
+                    <div class="testimonial-date" style="color:#4caf50; font-size:0.75rem; text-align:right; margin-top:10px;">15.02.2025</div>
+                </div>
+                <!-- Отзыв 5: Volkswagen Passat с фото -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                        <div class="testimonial-name"><h4>Сергей П.</h4><span>Volkswagen Passat</span></div>
+                    </div>
+                    <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="testimonial-text">Спасибо за оперативность. Мотор пришёл хорошо упакованным, все прокладки новые. Установили без проблем.</div>
+                    <img src="Pssatw.webp" alt="Фото двигателя Volkswagen Passat">
+                    <div class="testimonial-date" style="color:#4caf50; font-size:0.75rem; text-align:right; margin-top:10px;">02.02.2025</div>
+                </div>
+                <!-- Отзыв 6: Hyundai Santa Fe -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                        <div class="testimonial-name"><h4>Иван Н.</h4><span>Hyundai Santa Fe</span></div>
+                    </div>
+                    <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    <div class="testimonial-text">Хороший выбор контрактных моторов. Цены адекватные, дают гарантию. Рекомендую.</div>
+                    <div class="testimonial-date" style="color:#4caf50; font-size:0.75rem; text-align:right; margin-top:10px;">20.01.2025</div>
+                </div>
+                <!-- Отзыв 7: Land Rover Freelander с фото -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                        <div class="testimonial-name"><h4>Максим Р.</h4><span>Land Rover Freelander</span></div>
+                    </div>
+                    <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="testimonial-text">Сложный поиск, но ребята справились. Двигатель как новый, даже масло не пахнет гарью. Спасибо!</div>
+                    <img src="Lrf.webp" alt="Фото двигателя Land Rover Freelander">
+                    <div class="testimonial-date" style="color:#4caf50; font-size:0.75rem; text-align:right; margin-top:10px;">10.01.2025</div>
+                </div>
+                <!-- Отзыв 8: Mazda CX-5 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar"><i class="fas fa-user"></i></div>
+                        <div class="testimonial-name"><h4>Анна Л.</h4><span>Mazda CX-5</span></div>
+                    </div>
+                    <div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star" style="color:#555;"></i><i class="fas fa-star" style="color:#555;"></i></div>
+                    <div class="testimonial-text">Двигатель отличный, работает как часы, но доставка задержалась на три дня. Из‑за этого немного подпортилось впечатление. В остальном всё хорошо.</div>
+                    <div class="testimonial-date" style="color:#4caf50; font-size:0.75rem; text-align:right; margin-top:10px;">28.12.2024</div>
+                </div>
+            </div>
+        </div>
+        <button class="btn-review" id="openReviewModal"><i class="fas fa-pen"></i> Оставить отзыв</button>
+
+        <!-- Блок соцсетей -->
+        <div class="social-section">
+            <div class="social-title">Мы в соц сетях</div>
+            <div class="social-icons">
+                <a href="https://max.ru/join/0SYWhi5pG8mgxrswDAFLj6l28jZN4G2woco1oPk5OLw" class="social-icon-link max" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-star"></i>
+                    <span>Max</span>
+                </a>
+                <a href="https://t.me/tehno_agrigad" class="social-icon-link telegram" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-telegram-plane"></i>
+                    <span>Telegram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ПЛАВАЮЩАЯ КНОПКА -->
+<div class="floating-social">
+    <div class="social-toggle" id="socialToggle">
+        <i class="fas fa-comments"></i>
+    </div>
+    <div class="social-links" id="socialLinks">
+        <a href="tel:+79303453011" class="social-link phone" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-phone-alt"></i>
+            <span>Звонок</span>
+        </a>
+        <a href="https://max.ru/join/0SYWhi5pG8mgxrswDAFLj6l28jZN4G2woco1oPk5OLw" class="social-link max" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-star"></i>
+            <span>Max</span>
+        </a>
+        <a href="https://t.me/tehno_agrigad" class="social-link telegram" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-telegram-plane"></i>
+            <span>Telegram</span>
+        </a>
+    </div>
+</div>
+
+<!-- Модальное окно для отзыва -->
+<div class="modal-overlay" id="reviewModal">
+    <div class="modal-content">
+        <button class="modal-close" id="closeReviewModal">&times;</button>
+        <h3>Оставить отзыв</h3>
+        <form id="reviewForm" enctype="multipart/form-data">
+            <div class="form-group"><label>Ваше имя *</label><input type="text" id="reviewName" required></div>
+            <div class="form-group"><label>Телефон или email</label><input type="text" id="reviewContact"></div>
+            <div class="form-group"><label>Марка авто</label><select id="reviewBrand"><option value="">— Выберите —</option></select></div>
+            <div class="form-group"><label>Модель авто</label><select id="reviewModel"><option value="">— Выберите —</option></select></div>
+            <div class="form-group"><label>Ваш отзыв *</label><textarea id="reviewText" rows="4" required></textarea></div>
+            <div class="form-group"><label>Фото (необязательно)</label><input type="file" id="reviewPhoto" accept="image/*"></div>
+            <button type="submit" class="btn" id="submitReview">Отправить отзыв</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // ===== РАСШИРЕННАЯ БАЗА АВТОМОБИЛЕЙ =====
+    const carsDatabase = {
+        'Audi': ['A1','A2','A3','A4','A5','A6','A7','A8','Q2','Q3','Q5','Q7','Q8','TT','R8'],
+        'BMW': ['1 Series','2 Series','3 Series','4 Series','5 Series','6 Series','7 Series','8 Series','X1','X2','X3','X4','X5','X6','X7','Z4','i3','i8'],
+        'Mercedes-Benz': ['A-Class','B-Class','C-Class','CLA-Class','CLS-Class','E-Class','G-Class','GLA','GLB','GLC','GLE','GLS','S-Class','SL','SLC','V-Class'],
+        'Porsche': ['911','Boxster','Cayenne','Cayman','Macan','Panamera','Taycan'],
+        'Volkswagen': ['Golf','Passat','Polo','Tiguan','Touareg','Touran','Arteon','ID.3','ID.4','ID.5','T-Roc','Taos'],
+        'Toyota': ['Camry','Corolla','RAV4','Land Cruiser','Highlander','Prius','Yaris','C-HR','Hilux','Supra','Avalon'],
+        'Nissan': ['Qashqai','X-Trail','Juke','Leaf','Micra','Navara','Patrol','GT-R','370Z','Almera'],
+        'Honda': ['Civic','Accord','CR-V','HR-V','Jazz','Pilot','Odyssey','NSX'],
+        'Mazda': ['3','6','CX-3','CX-5','CX-30','CX-9','MX-5','RX-8'],
+        'Subaru': ['Forester','Outback','Impreza','WRX','XV','Legacy','BRZ'],
+        'Mitsubishi': ['Outlander','ASX','Pajero','L200','Eclipse Cross','Lancer'],
+        'Hyundai': ['Tucson','Santa Fe','Creta','Solaris','Elantra','i30','i20','Sonata','Kona','Palisade'],
+        'Kia': ['Sportage','Sorento','Ceed','Rio','Optima','Stinger','Soul','Niro','Telluride'],
+        'Lexus': ['RX','NX','ES','IS','LX','GX','UX','LC','LS'],
+        'Infiniti': ['Q50','Q60','QX50','QX60','QX70','QX80'],
+        'Ford': ['Focus','Fusion','Mondeo','Kuga','Explorer','Mustang','Ranger','Transit'],
+        'Chevrolet': ['Cruze','Malibu','Camaro','Corvette','Tahoe','Suburban','Silverado'],
+        'Jeep': ['Wrangler','Grand Cherokee','Cherokee','Compass','Renegade','Gladiator'],
+        'Land Rover': ['Range Rover','Range Rover Sport','Range Rover Evoque','Discovery','Discovery Sport','Freelander','Defender'],
+        'Jaguar': ['F-Pace','E-Pace','I-Pace','XE','XF','XJ','F-Type'],
+        'Volvo': ['XC40','XC60','XC90','S60','S90','V60','V90'],
+        'Renault': ['Duster','Kaptur','Arkana','Sandero','Logan','Megane','Kadjar','Scenic'],
+        'Peugeot': ['208','308','3008','5008','508','2008','Rifter','Partner'],
+        'Citroen': ['C3','C3 Aircross','C4','C5 Aircross','Berlingo','Jumpy'],
+        'Skoda': ['Octavia','Superb','Kodiaq','Karoq','Fabia','Rapid','Scala','Enyaq'],
+        'Lada': ['Vesta','Granta','Largus','Niva','Niva Travel','XRAY','Kalina','Priora'],
+        'UAZ': ['Patriot','Hunter','Pickup','Bukhanka','Profi'],
+        'Genesis': ['G70','G80','G90','GV70','GV80'],
+        'Chery': ['Tiggo 2','Tiggo 4','Tiggo 7','Tiggo 8','Arrizo 5','Arrizo 7'],
+        'Geely': ['Coolray','Atlas','Tugella','Emgrand X7','Monjaro'],
+        'Haval': ['Jolion','H6','F7','F7x','H9','Dargo'],
+        'BYD': ['Han','Song','Tang','Yuan','Atto 3','Dolphin','Seal']
+    };
+
+    // === ГЛАВНАЯ ФОРМА ===
+    const brandSelect = document.getElementById('brand');
+    const modelSelect = document.getElementById('model');
+    const nameInput = document.getElementById('name');
+    const phoneInput = document.getElementById('phone');
+    const brandsList = Object.keys(carsDatabase).sort();
+
+    brandsList.forEach(b => {
+        let opt = document.createElement('option');
+        opt.value = b;
+        opt.textContent = b;
+        brandSelect.appendChild(opt);
+    });
+
+    brandSelect.addEventListener('change', function() {
+        const selected = this.value;
+        modelSelect.innerHTML = '<option value="" disabled selected>Выберите модель</option>';
+        if (carsDatabase[selected]) {
+            carsDatabase[selected].sort().forEach(m => {
+                let opt = document.createElement('option');
+                opt.value = m;
+                opt.textContent = m;
+                modelSelect.appendChild(opt);
+            });
+        }
+    });
+
+    function validateField(field, groupId) {
+        const group = document.getElementById(groupId);
+        if (field.value.trim() !== '') {
+            if (field.id === 'phone') {
+                let digits = field.value.replace(/\D/g, '');
+                if (digits.length >= 10) group.classList.add('valid');
+                else group.classList.remove('valid');
+            } else if (field.id === 'name') {
+                if (field.value.trim().length >= 2) group.classList.add('valid');
+                else group.classList.remove('valid');
+            } else {
+                group.classList.add('valid');
+            }
+        } else group.classList.remove('valid');
+    }
+    nameInput.addEventListener('input', () => validateField(nameInput, 'name-group'));
+    phoneInput.addEventListener('input', () => validateField(phoneInput, 'phone-group'));
+    brandSelect.addEventListener('change', () => validateField(brandSelect, 'brand-group'));
+    modelSelect.addEventListener('change', () => validateField(modelSelect, 'model-group'));
+
+    const TOKEN = '8082488436:AAG1TC4K8JvKwRCOy6dyuBArbE-npJPtmt0';
+    const CHAT_ID = '-1003740634850';
+
+    // === ОТПРАВКА ГЛАВНОЙ ФОРМЫ (через PHP-прокси) ===
+    document.getElementById('telegramForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const brand = brandSelect.value;
+        const model = modelSelect.value;
+        if (!name || name.length < 2) { alert('Введите имя'); nameInput.focus(); return; }
+        const phoneDigits = phone.replace(/\D/g, '');
+        if (!phone || phoneDigits.length < 10) { alert('Введите корректный телефон'); phoneInput.focus(); return; }
+        if (!brand) { alert('Выберите марку'); brandSelect.focus(); return; }
+        if (!model) { alert('Выберите модель'); modelSelect.focus(); return; }
+
+        const btn = e.target.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = 'Отправка...';
+
+        try {
+            // Запрос к PHP-прокси, который лежит в корне сайта
+            const response = await fetch('/telegram-proxy.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    phone: phoneDigits,
+                    brand: brand,
+                    model: model
+                })
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                window.location.href = 'thankyou.html';
+            } else {
+                alert('Ошибка: ' + (result.error || 'Не удалось отправить заявку'));
+                btn.disabled = false;
+                btn.textContent = 'Отправить заявку';
+            }
+        } catch (error) {
+            alert('Ошибка сети. Проверьте подключение к интернету.');
+            btn.disabled = false;
+            btn.textContent = 'Отправить заявку';
+        }
+    });
+
+    document.getElementById('privacyLink').addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Политика конфиденциальности: заполняя форму, вы соглашаетесь на обработку персональных данных.');
+    });
+
+    // === ПЛАВАЮЩАЯ КНОПКА ===
+    const toggleBtn = document.getElementById('socialToggle');
+    const socialLinksElem = document.getElementById('socialLinks');
+    let isOpen = false;
+
+    toggleBtn.addEventListener('click', () => {
+        isOpen = !isOpen;
+        if (isOpen) {
+            socialLinksElem.classList.add('active');
+            toggleBtn.style.transform = 'rotate(45deg)';
+        } else {
+            socialLinksElem.classList.remove('active');
+            toggleBtn.style.transform = 'rotate(0deg)';
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!toggleBtn.contains(e.target) && !socialLinksElem.contains(e.target) && isOpen) {
+            socialLinksElem.classList.remove('active');
+            toggleBtn.style.transform = 'rotate(0deg)';
+            isOpen = false;
+        }
+    });
+
+    // === МОДАЛКА ОТЗЫВА ===
+    const modal = document.getElementById('reviewModal');
+    const openBtn = document.getElementById('openReviewModal');
+    const closeBtn = document.getElementById('closeReviewModal');
+    const reviewForm = document.getElementById('reviewForm');
+    const reviewName = document.getElementById('reviewName');
+    const reviewContact = document.getElementById('reviewContact');
+    const reviewBrand = document.getElementById('reviewBrand');
+    const reviewModel = document.getElementById('reviewModel');
+    const reviewText = document.getElementById('reviewText');
+    const reviewPhoto = document.getElementById('reviewPhoto');
+    const submitReview = document.getElementById('submitReview');
+
+    brandsList.forEach(b => {
+        let opt = document.createElement('option');
+        opt.value = b;
+        opt.textContent = b;
+        reviewBrand.appendChild(opt);
+    });
+
+    reviewBrand.addEventListener('change', function() {
+        const selected = this.value;
+        reviewModel.innerHTML = '<option value="">— Выберите модель —</option>';
+        if (selected && carsDatabase[selected]) {
+            carsDatabase[selected].sort().forEach(m => {
+                let opt = document.createElement('option');
+                opt.value = m;
+                opt.textContent = m;
+                reviewModel.appendChild(opt);
+            });
+        }
+    });
+
+    openBtn.addEventListener('click', () => modal.style.display = 'flex');
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+
+    function validateReviewField(field) {
+        const group = field.closest('.form-group');
+        if (field.id === 'reviewName' || field.id === 'reviewText') {
+            if (field.value.trim() !== '') group.classList.add('valid');
+            else group.classList.remove('valid');
+        } else {
+            if (field.value.trim() !== '') group.classList.add('valid');
+            else group.classList.remove('valid');
+        }
+    }
+    reviewName.addEventListener('input', () => validateReviewField(reviewName));
+    reviewText.addEventListener('input', () => validateReviewField(reviewText));
+    reviewContact.addEventListener('input', () => validateReviewField(reviewContact));
+    reviewBrand.addEventListener('change', function() {
+        let group = this.closest('.form-group');
+        if (this.value) group.classList.add('valid'); else group.classList.remove('valid');
+    });
+    reviewModel.addEventListener('change', function() {
+        let group = this.closest('.form-group');
+        if (this.value) group.classList.add('valid'); else group.classList.remove('valid');
+    });
+
+    reviewForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const name = reviewName.value.trim();
+        const contact = reviewContact.value.trim();
+        const brand = reviewBrand.value;
+        const model = reviewModel.value;
+        const text = reviewText.value.trim();
+        const photo = reviewPhoto.files[0];
+        if (!name) { alert('Введите имя'); reviewName.focus(); return; }
+        if (!text) { alert('Напишите отзыв'); reviewText.focus(); return; }
+        let caption = `✍️ НОВЫЙ ОТЗЫВ\n\n👤 Имя: ${name}`;
+        if (contact) caption += `\n📞 Контакт: ${contact}`;
+        if (brand) caption += `\n🚗 Марка: ${brand}`;
+        if (model) caption += `\n🔧 Модель: ${model}`;
+        caption += `\n💬 Отзыв: ${text}`;
+        submitReview.disabled = true;
+        submitReview.textContent = 'Отправка...';
+        try {
+            if (photo) {
+                const fd = new FormData();
+                fd.append('chat_id', CHAT_ID);
+                fd.append('photo', photo);
+                fd.append('caption', caption);
+                await fetch(`https://api.telegram.org/bot${TOKEN}/sendPhoto`, { method: 'POST', body: fd });
+            } else {
+                await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(caption)}`);
+            }
+            reviewForm.reset();
+            document.querySelectorAll('#reviewModal .form-group').forEach(g => g.classList.remove('valid'));
+            modal.style.display = 'none';
+            alert('Спасибо! Отзыв отправлен и появится после модерации.');
+        } catch (err) { alert('Ошибка отправки'); }
+        finally { submitReview.disabled = false; submitReview.textContent = 'Отправить отзыв'; }
+    });
+</script>
+</body>
+</html>
