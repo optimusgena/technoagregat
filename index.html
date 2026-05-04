@@ -1142,22 +1142,7 @@ html {
 <div class="container">
     <!-- Логотип и контакты -->
     <div class="logo-container">
-        <div class="logo-wrapper">
-        <div class="logo-text">
-    <h1><span class="techno">ТЕХНО</span><span class="agregat">АГРЕГАТ</span></h1>
-    <div class="premium">PREMIUM ENGINES</div>
-</div>
-        </div>
-    </div>
-
-    <!-- Главный экран -->
-<section class="hero">
-    <div class="hero-content-new">
-        <h1 class="hero-title">Профессиональный подбор контрактных двигателей <span class="highlight">«под ключ»</span></h1>
-        <p class="hero-subtitle">Подберём мотор под ваш автомобиль: полная проверка, видеоотчёт, документы. Никаких скрытых условий — <span class="white-text">только понятные сроки и честная цена по запросу.</span></p>
-        <div class="hero-buttons">
-            <a href="#order-form" class="btn-primary">Заявка на подбор</a>
-            <a href="tel:+79303453011" class="btn-secondary"><i class="fas fa-phone-alt"></i> Позвонить сейчас</a>
+        <div class="logo-wrapi> Позвонить сейчас</a>
         </div>
 <div class="work-hours">Ежедневно 08:00–20:00. Перезваниваем за 5–15 минут.</div>
 
@@ -1351,9 +1336,6 @@ html {
 
 <!-- ПЛАВАЮЩАЯ КНОПКА -->
 <div class="floating-social">
-    <a href="#" class="scroll-to-top" id="scrollToTop">
-        <i class="fas fa-arrow-up"></i>
-    </a>
     <div class="social-toggle" id="socialToggle">
         <i class="fas fa-comments"></i>
     </div>
@@ -1645,19 +1627,6 @@ html {
         } catch (err) { alert('Ошибка отправки'); }
         finally { submitReview.disabled = false; submitReview.textContent = 'Отправить отзыв'; }
     });
-    // Кнопка "Наверх" — показать/скрыть
-const scrollToTopBtn = document.getElementById('scrollToTop');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-        scrollToTopBtn.classList.add('visible');
-    } else {
-        scrollToTopBtn.classList.remove('visible');
-    }
-});
-scrollToTopBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
 </script>
 </body>
 </html>
