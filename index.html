@@ -1137,6 +1137,24 @@ html {
     transform: scale(1.1);
     box-shadow: 0 6px 16px rgba(76,175,80,0.3);
 }
+        /* Анимация вибрации и зелёной обводки для формы */
+.hero-form.highlight-shake {
+    animation: formShake 0.6s ease;
+    border-color: #4caf50 !important; /* зелёная обводка */
+}
+
+@keyframes formShake {
+    0%, 100% { transform: translateX(0); }
+    10% { transform: translateX(-6px); }
+    20% { transform: translateX(6px); }
+    30% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    50% { transform: translateX(-4px); }
+    60% { transform: translateX(4px); }
+    70% { transform: translateX(-2px); }
+    80% { transform: translateX(2px); }
+    90% { transform: translateX(-1px); }
+}
     </style>
 </head>
 <body>
@@ -1643,6 +1661,22 @@ html {
         } catch (err) { alert('Ошибка отправки'); }
         finally { submitReview.disabled = false; submitReview.textContent = 'Отправить отзыв'; }
     });
+    // Плавная прокрутка к форме + анимация вибрации
+document.querySelector('.btn-primary[href="#order-form"]').addEventListener('click', function(e) {
+    e.preventDefault(); // отменяем мгновенный переход
+    const target = document.querySelector('#order-form');
+    if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // После прокрутки добавляем класс с вибрацией
+        setTimeout(() => {
+            target.classList.add('highlight-shake');
+            // Убираем класс через 0.6с, чтобы можно было повторить
+            setTimeout(() => {
+                target.classList.remove('highlight-shake');
+            }, 600);
+        }, 500); // небольшая задержка, чтобы прокрутка завершилась
+    }
+});
 </script>
 </body>
 </html>
