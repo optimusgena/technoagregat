@@ -894,7 +894,6 @@
     transition: all 0.3s;
     border: none;
     cursor: pointer;
-    animation: btnShine 5s infinite, btnPulse 2s infinite ease-in-out;
 }
 
 .btn-primary:hover {
@@ -996,7 +995,7 @@
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px) scale(1.03);
+    transform: translateY(-3px);
     box-shadow: 0 0 20px rgba(76, 175, 80, 0.5), 0 0 40px rgba(76, 175, 80, 0.2);
 }    
     .logo-text h1 {
@@ -1157,11 +1156,6 @@ html {
     80% { transform: translateX(2px); }
     90% { transform: translateX(-1px); }
 }
-    @keyframes btnPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.03); }
-    100% { transform: scale(1); }
-    }    
     </style>
 </head>
 <body>
